@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 const routes :Routes = [
   {path:'pro', component:ProductComponent},
   {path:'stock', component:StockComponent},
+  {path:'', component:IndexComponent},
+
   
   
 ]

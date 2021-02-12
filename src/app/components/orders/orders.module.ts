@@ -6,7 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 
 const routes :Routes = [
-  {path:'order', component:OrderComponent}
+  {path:'', component:OrderComponent}
+
  
 ]
 
