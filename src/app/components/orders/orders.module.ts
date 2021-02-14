@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderComponent } from './order/order.component';
@@ -14,7 +15,7 @@ const routes :Routes = [
 @NgModule({
   declarations: [OrderComponent],
   imports: [
-    CommonModule,RouterModule.forChild(routes), FormsModule
+    CommonModule,RouterModule.forChild(routes), FormsModule,SharedModule
   ]
 })
 export class OrdersModule { }

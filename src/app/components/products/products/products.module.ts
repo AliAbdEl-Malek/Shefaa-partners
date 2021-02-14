@@ -1,3 +1,4 @@
+import { SharedModule } from '../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -20,7 +21,7 @@ const routes :Routes = [
 @NgModule({
   declarations: [ProductComponent, IndexComponent, StockComponent],
   imports: [
-    CommonModule,RouterModule.forChild(routes), FormsModule
+    CommonModule,RouterModule.forChild(routes), FormsModule,SharedModule
   ]
 })
 export class ProductsModule { }

@@ -1,6 +1,7 @@
 import { ProductsModule } from './components/products/products/products.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,11 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('../app/components/orders/orders.module').then(m => m.OrdersModule)
   },
+  {
+    path: 'shared', 
+    loadChildren: () => import('../app/components/shared/shared.module').then(m => m.SharedModule)
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
