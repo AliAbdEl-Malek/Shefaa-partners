@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 
     let token = this._partnerService.getToken()
     console.log("Token is:", token)
-    this._apiService.get('user/get/' + token).subscribe((response) => {
+    this._apiService.get('partner/get/' + token).subscribe((response) => {
       let obj = response as APIResponse
       console.log("User Retrieved: ", obj)
       if (obj.status) {

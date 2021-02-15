@@ -1,4 +1,4 @@
-<nav class="d-flex flex-wrap align-items-center fixed-top navbar-expand-md navbar-dark" style="padding: .3rem 1rem; background-color: #32c69a;">
+<nav class="d-flex flex-wrap align-items-center fixed-top navbar-expand-md navbar-dark" style="padding: .3rem 1rem; background-color: #838383;">
     <!-- <div class="container-fluid"> -->
     <button class="btn navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -27,10 +27,13 @@
             </li>
             <div *ngIf="!partner" class="dropdown-divider"></div>
             <li *ngIf="partner" class="nav-item d-block d-md-none mt-2">
-                <a class="nav-link nav-hover" [routerLink]="['/profile']" routerLinkActive="router-link-active"><i class="fa fa-user px-2"></i> {{partner.name}}</a>
+                <a class="nav-link nav-hover" [routerLink]="['/profile/edit']" routerLinkActive="router-link-active"><i class="fa fa-user px-2"></i> {{partner.name}}</a>
             </li>
             <li class="nav-item d-none d-md-block">
                 <a class="nav-link nav-hover" [routerLink]="['']" routerLinkActive="router-link-active">Home</a>
+            </li>
+            <li *ngIf="partner" class="nav-item d-block d-md-none mt-2">
+                <a class="nav-link nav-hover" [routerLink]="['/profile/previous']" routerLinkActive="router-link-active"><i class="fa fa-user px-2"></i> Previous Orders</a>
             </li>
             <li class="nav-item d-none d-md-block">
                 <a class="nav-link nav-hover" [routerLink]="['/products/stock']" routerLinkActive="router-link-active">Stock</a>
@@ -77,22 +80,20 @@
     <!-- Sign Up -->
 
     <!-- User icon in md & lg screens -->
-    <!-- <div *ngIf="isLogged" class="d-none d-md-flex">
+    <div *ngIf="isLogged" class="d-none d-md-flex">
         <a class="nav-link  py-2 px-1" style="font-size: 30px; color: #f4f8fb;" role="button" data-toggle="dropdown">
-            <img *ngIf="partner.photoURL" src="http://localhost:3000/{{partner.photoURL}}" class="rounded-circle" alt="user Image" style="width: 35px;">
+            <img *ngIf="partner.photoURL" src="http://localhost:3000/{{partner.photoURL}}" class="rounded-circle" alt="user Image" style="width: 35px; height: 35px;">
             <img *ngIf="!partner.photoURL" src="assets/images/pp-man.png" class="rounded-circle" alt="user Image" style="width: 35px;">
             <span *ngIf="partner" style="font-size: 15px; position: relative; top: -5px;"> {{partner.name}}</span>
         </a>
         <div class="dropdown-menu p-2 dropdown-menu-right">
-            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/profile']" routerLinkActive="router-link-active"><i class="fa fa-user pr-2" style="color: #32c69a;"></i>Profile</a>
+            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/profile/edit']" routerLinkActive="router-link-active"><i class="fa fa-user pr-2"></i>Profile</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/products/favourite']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2" style="color: #32c69a;"></i>Favourite Products</a>
+            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/profile/previous']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2"></i>Previous Orders</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/prescription']" routerLinkActive="router-link-active"><i class="fa fa-file pr-2" style="color: #32c69a;"></i>Prescription</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/registeration/logout']" routerLinkActive="router-link-active"><i class="fa fa-sign-out pr-2" style="color: #32c69a;"></i>Log Out</a>
+            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/registeration/logout']" routerLinkActive="router-link-active"><i class="fa fa-sign-out pr-2"></i>Log Out</a>
         </div>
-    </div> -->
+    </div>
     <!-- User icon in md & lg screens -->
 
     <!-- </div> -->

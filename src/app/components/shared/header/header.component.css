@@ -21,43 +21,14 @@ ul li .nav-hover:hover {
     padding-bottom: 4px;
 }
 
+.toggle-hover {
+    color: #838383;
+}
+
 .toggle-hover:hover {
-    background-color: #f4f8fb;
+    background-color: #838383;
     color: #32c69a;
     border-radius: 15px;
-}
-
-.searchsmall {
-    width: 120px;
-}
-
-.searchsmall:focus {
-    width: 170px;
-}
-
-.searchmedium {
-    width: 170px;
-}
-
-.searchmedium:focus {
-    width: 250px;
-}
-
-.searchlarge {
-    width: 155px;
-}
-
-
-/* .searchlarge:focus{
-    width: 220px; 
-} */
-
-.searchxlarge {
-    width: 320px;
-}
-
-.searchxlarge:focus {
-    width: 365px;
 }
 
 .nav-icon {

@@ -1,6 +1,7 @@
 <app-header></app-header>
 
-<div class="container" style="margin-top: 80px;">
+<div style="background-color: #f4f8fb; padding-bottom: 190px;" *ngIf="products">
+  <div class="mx-5" style="padding-top: 80px;">
     <h2 style="color: #404040;">Stock</h2>
     <div class="card" >
         
@@ -8,10 +9,12 @@
             <thead>
               <tr>
                 <th>#</th>
+                <!-- <th>Photo</th> -->
                 <th>Name</th>
-                <th>Details</th>
+                <th>Description</th>
                 <th>price</th>
                 <th>Quantity</th>
+                <th>Category</th>
                 <th>Edit</th>
                 <th>Remove</th>
               </tr>
@@ -19,25 +22,28 @@
             <tbody>
               <tr *ngFor="let item of products;let currentIndex=index">
                 <td>{{currentIndex+1}}</td>
-                <td > 
-                </td>
-                <td></td>
-                <td>
-                </td>
-                <td></td>
-                <td>
-                    <button  type="button" class="btn btn-warning">Edit</button>
                 
-                  </td>
-                <td>
-                    <button  type="button" class="btn btn-danger">Remove</button>
-                
-                  </td>
+                <!-- <td>{{item.photoURL}}</td> -->
+
+                <td>{{item.name}}</td>
+
+                <td>{{item.description}}</td>
+
+                <td>{{item.price}}</td>
+
+                <td>{{item.quantity}}</td>
+
+                <td>{{item.category}}</td>
+
+                <td><button [routerLink]="['']" routerLinkActive="router-link-active"  type="button" class="btn btn-warning">Edit</button></td>
+
+                <td><button  type="button" class="btn btn-danger">Remove</button></td>
               </tr>
               
             </tbody>
           </table>
       </div>
+  </div>
 </div>
 
 <app-footer></app-footer>

@@ -1,7 +1,7 @@
 <div style="background-color: #f4f8fb;">
   <div class="d-flex justify-content-center">
 
-    <div class="col-sm-8 shadow " style="background-color: white; margin-top: 100px;">
+    <div class="col-sm-8 shadow " style="background-color: white; margin-top: 100px; margin-bottom: 20px;">
       <div class=" w-100 ">
         <form class="p-4 ">
           <h3>Add Product</h3>
@@ -9,48 +9,85 @@
             <div class="form-group" style="width:60%">
               <label>Photo URL</label>
               <input class="form-control" placeholder="Photo URL">
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Photo URL is required!</small>
+              </div>
             </div>
+
             <div class="form-group" style="width:60%">
               <label>Name</label>
               <input class="form-control" placeholder="Product Name">
 
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Name is required!</small>
+              </div>
             </div>
+
             <div class="form-group" style="width:60%">
               <label>Descreption</label>
               <textarea class="form-control" placeholder="Descreption"></textarea>
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Descreption is required!</small>
+              </div>
             </div>
+
             <div class="form-group" style="width:60%">
               <label>Title</label>
               <input class="form-control" placeholder="Title">
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Title is required!</small>
+              </div>
             </div>
+
             <div class="form-group" style="width:60%">
-              <label>Body</label>
-              <textarea class="form-control" placeholder="Body"></textarea>
+              <label>Indications</label>
+              <textarea class="form-control" placeholder="Indications"></textarea>
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Indications are required!</small>
+              </div>
             </div>
+
             <div class="form-group" style="width:60%">
               <label>Side Effects</label>
               <textarea class="form-control" placeholder="Side Effects"></textarea>
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Side Effects are required!</small>
+              </div>
             </div>
 
             <div class="form-group" style="width:60%">
               <label>Price</label>
               <input class="form-control" placeholder="Price">
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Price is required!</small>
+              </div>
             </div>
+
             <div class="form-group" style="width:60%">
               <label>Quantity</label>
               <input class="form-control" placeholder="Quantity">
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Quantity is required!</small>
+              </div>
             </div>
+
             <div class="form-group" style="width:60%">
               <label for="exampleInputPassword1">Category</label>
               <input class="form-control" placeholder="Category">
-            </div>
-            <div class="form-group" style="width:60%">
-              <label>Language</label>
-              <input class="form-control" placeholder="Language">
+
+              <div *ngIf="formGroup.controls['input'].invalid && formGroup.controls['input'].dirty">
+                <small class="form-text text-danger" *ngIf="formGroup.controls['input'].hasError('required')">Category is required!</small>
+              </div>
             </div>
 
-
-            <button class="btn btn-primary">Add</button>
+            <button [disabled]="formGroup.invalid" (click)="addproduct()" class="btn add-btn">Add</button>
           </div>
         </form>
       </div>

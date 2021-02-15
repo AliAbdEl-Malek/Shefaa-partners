@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('../app/components/orders/orders.module').then(m => m.OrdersModule)
   },
   {
+    path: 'profile',
+    loadChildren: () => import('../app/components/profile/profile.module').then(m => m.ProfileModule)
+  },
+  {
     path: 'shared', 
     loadChildren: () => import('../app/components/shared/shared.module').then(m => m.SharedModule)
   },
