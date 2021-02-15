@@ -5,7 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { IndexComponent } from './index/index.component';
 import { StockComponent } from './stock/stock.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
+import { UpdateComponent } from './update/update.component';
 
 
 
@@ -13,15 +14,15 @@ const routes :Routes = [
   {path:'pro', component:ProductComponent},
   {path:'stock', component:StockComponent},
   {path:'', component:IndexComponent},
-
+  {path:'update', component:UpdateComponent},
   
   
 ]
 
 @NgModule({
-  declarations: [ProductComponent, IndexComponent, StockComponent],
+  declarations: [ProductComponent, IndexComponent, StockComponent, UpdateComponent],
   imports: [
-    CommonModule,RouterModule.forChild(routes), FormsModule,SharedModule
+    CommonModule,RouterModule.forChild(routes), FormsModule,SharedModule,ReactiveFormsModule
   ]
 })
 export class ProductsModule { }

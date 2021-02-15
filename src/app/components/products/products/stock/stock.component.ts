@@ -46,4 +46,19 @@ export class StockComponent implements OnInit {
     })
   }
 
+  delete(id: any, index: any) {
+    console.log("deleted product :" , id)
+    this._apiService.put(`product/delete/${id}`, this.partner).subscribe((response) => {
+      let obj = response as APIResponse
+      if (obj.status) {
+        console.log(obj.message)
+      } else {
+        console.log(obj.message)
+      }
+    });
+    // this._cartService.deleteFromCart(id);
+    this.products.splice(index, 1);
+    
+  }
+
 }
