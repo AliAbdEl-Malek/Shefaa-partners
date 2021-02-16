@@ -5,11 +5,9 @@ export class Product {
     pharmacyID: string;
     name: string;
     description: string;
-    details: {
-        title: string,
-        body: string,
-        sideEffects: string,
-    };
+    title: string;
+    body: string;
+    sideEffects: string;
     photoURL: string;
     price: number;
     quantity: number;

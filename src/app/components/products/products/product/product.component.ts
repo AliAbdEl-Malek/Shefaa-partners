@@ -56,11 +56,21 @@ export class ProductComponent implements OnInit {
     
   }
 
-  addproduct() {
+  addproduct(photoURL:string,Name:string,Description:string,Title:string,Indications:string,SideEffects:string,Price:number,Quantity:number,Category:string) {
     let partner = this.partner.id
-    let product: Product = new Product;
-    product = this.formGroup.value
-    
+    let product:Product = new Product;
+    // product = this.formGroup.value
+    product.pharmacyID=partner;
+    product.photoURL=photoURL;
+    product.name=Name;
+    product.description=Description;
+    product.title=Title;
+    product.body=Indications;
+    product.sideEffects=SideEffects;
+    product.price=Price;
+    product.quantity=Quantity;
+    product.category=Category;
+
     console.log("partner", partner);
     console.log("product", product);
 

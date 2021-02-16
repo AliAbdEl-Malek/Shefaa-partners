@@ -38,7 +38,7 @@ export class UpdateComponent implements OnInit {
       this.productId = params['ID']
       console.log("product ID: ",  this.productId )
 
-      this._apiService.get('product/' + this.productId).subscribe((response)=>{​​​​​
+      this._apiService.getedit('product/edit/' + this.productId).subscribe((response)=>{​​​​​
         let obj = response as APIResponse;
         console.log("Data from server",obj);
 

@@ -48,7 +48,7 @@ export class StockComponent implements OnInit {
 
   delete(id: any, index: any) {
     console.log("deleted product :" , id)
-    this._apiService.put(`product/delete/${id}`, this.partner).subscribe((response) => {
+    this._apiService.delete(`product/delete/${id}`).subscribe((response) => {
       let obj = response as APIResponse
       if (obj.status) {
         console.log(obj.message)

@@ -20,6 +20,10 @@ export class ApiService {
     return this.httpClient.get(`${environment.APIURL}/${url}`,{headers:{'authorization':this.token}});
   }
 
+  getedit(url:string){
+    return this.httpClient.get(`${environment.APIURL}/${url}`);
+  }
+
   post(url:string,partner:any){
     return this.httpClient.post(`${environment.APIURL}/${url}`,partner)
   }
@@ -28,6 +32,9 @@ export class ApiService {
     return this.httpClient.put(`${environment.APIURL}/${url}`,partner,{headers:{'authorization':this.token}})
   }
 
-  
+  delete(url:string){
+    return this.httpClient.delete(`${environment.APIURL}/${url}`)
+  }
+
 }
 
