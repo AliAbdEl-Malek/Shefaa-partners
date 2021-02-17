@@ -1,9 +1,12 @@
-import { ProductsModule } from './components/products/products/products.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  {
+    path: 'Prescription',
+    loadChildren: () => import('../app/components/prescription/prescription/prescription.module').then(m => m.PrescriptionModule)
+  },
   {
     path: 'products',
     loadChildren: () => import('../app/components/products/products/products.module').then(m => m.ProductsModule)

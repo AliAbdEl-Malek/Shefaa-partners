@@ -1,7 +1,7 @@
 <div style="background-color: #f4f8fb;">
   <div class="d-flex justify-content-center">
 
-    <div class="col-sm-8 shadow " style="background-color: white; margin-top: 100px; margin-bottom: 20px;">
+    <div class="col-sm-8 shadow " style="background-color: white; margin-top: 100px; margin-bottom: 70px;">
       <div class=" w-100 ">
         <form class="p-4 " [formGroup]="formGroup">
           <h3>Add Product</h3>
@@ -26,7 +26,7 @@
 
             <div class="form-group" style="width:60%">
               <label>Descreption</label>
-              <textarea #inputDescription formControlName="Descreption" class="form-control" placeholder="Descreption"></textarea>
+              <textarea #inputDescription class="form-control" placeholder="Descreption"></textarea>
 
               <!-- <div *ngIf="formGroup.controls['Descreption'].invalid && formGroup.controls['Descreption'].dirty">
                 <small class="form-text text-danger" *ngIf="formGroup.controls['Descreption'].hasError('required')">Descreption is required!</small>
@@ -35,7 +35,7 @@
 
             <div class="form-group" style="width:60%">
               <label>Title</label>
-              <input #inputTitle formControlName="Title" class="form-control" placeholder="Title">
+              <input #inputTitle class="form-control" placeholder="Title">
 
               <!-- <div *ngIf="formGroup.controls['Title'].invalid && formGroup.controls['Title'].dirty">
                 <small class="form-text text-danger" *ngIf="formGroup.controls['Title'].hasError('required')">Title is required!</small>
@@ -44,7 +44,7 @@
 
             <div class="form-group" style="width:60%">
               <label>Indications</label>
-              <textarea #inputIndications formControlName="Indications" class="form-control" placeholder="Indications"></textarea>
+              <textarea #inputIndications class="form-control" placeholder="Indications"></textarea>
 
               <!-- <div *ngIf="formGroup.controls['Indications'].invalid && formGroup.controls['Indications'].dirty">
                 <small class="form-text text-danger" *ngIf="formGroup.controls['Indications'].hasError('required')">Indications are required!</small>
@@ -53,7 +53,7 @@
 
             <div class="form-group" style="width:60%">
               <label>Side Effects</label>
-              <textarea #inputSideEffects formControlName="Effects" class="form-control" placeholder="Side Effects"></textarea>
+              <textarea #inputSideEffects class="form-control" placeholder="Side Effects"></textarea>
 
               <!-- <div *ngIf="formGroup.controls['Effects'].invalid && formGroup.controls['Effects'].dirty">
                 <small class="form-text text-danger" *ngIf="formGroup.controls['Effects'].hasError('required')">Side Effects are required!</small>

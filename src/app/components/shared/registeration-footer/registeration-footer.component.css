@@ -26,10 +26,12 @@ li {
 }
 
 .link {
-    color: #32c69a;
+    background-color: #838383;
+    color: white;
     font-weight: 300;
     z-index: 20;
     position: relative;
+    border-radius: 15px;
     padding-left: 6px;
     padding-right: 6px;
 }

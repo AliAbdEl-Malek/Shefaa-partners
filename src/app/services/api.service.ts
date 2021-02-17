@@ -32,6 +32,10 @@ export class ApiService {
     return this.httpClient.put(`${environment.APIURL}/${url}`,partner,{headers:{'authorization':this.token}})
   }
 
+  putedit(url:string,product:any){
+    return this.httpClient.put(`${environment.APIURL}/${url}`,product)
+  }
+
   delete(url:string){
     return this.httpClient.delete(`${environment.APIURL}/${url}`)
   }

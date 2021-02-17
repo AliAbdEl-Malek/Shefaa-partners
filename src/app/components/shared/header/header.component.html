@@ -41,6 +41,9 @@
             <li class="nav-item d-none d-md-block">
                 <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active">Products</a>
             </li>
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link nav-hover" [routerLink]="['/Prescription']" routerLinkActive="router-link-active">Prescriptions</a>
+            </li>
             <li class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['']" routerLinkActive="router-link-active"><i class="fa fa-home px-2"></i> Home</a>
             </li>
@@ -49,6 +52,9 @@
             </li>
             <li class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Products</a>
+            </li>
+            <li class="nav-item d-block d-md-none">
+                <a class="nav-link nav-hover" [routerLink]="['/Prescription']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Prescriptions</a>
             </li>
             <div *ngIf="partner" class="dropdown-divider"></div>
             <li *ngIf="partner" class="nav-item d-block d-md-none">
@@ -89,7 +95,7 @@
         <div class="dropdown-menu p-2 dropdown-menu-right">
             <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/profile/edit']" routerLinkActive="router-link-active"><i class="fa fa-user pr-2"></i>Profile</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/profile/previous']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2"></i>Previous Orders</a>
+            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/orders/previous']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2"></i>Previous Orders</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/registeration/logout']" routerLinkActive="router-link-active"><i class="fa fa-sign-out pr-2"></i>Log Out</a>
         </div>

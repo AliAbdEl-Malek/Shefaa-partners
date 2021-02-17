@@ -10,7 +10,7 @@
             <div>
               <div class="form-group" style="width:60%">
                 <label>Photo URL</label>
-                <textarea formControlName="Photo" class="form-control" placeholder="Photo URL" [(ngModel)]="product.photoURL"></textarea>
+                <textarea #inputPhotoURL formControlName="Photo" class="form-control" placeholder="Photo URL" [(ngModel)]="product.photoURL"></textarea>
   
                 <div *ngIf="formGroup.controls['Photo'].invalid && formGroup.controls['Photo'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Photo'].hasError('required')">Photo URL is required!</small>
@@ -19,7 +19,7 @@
   
               <div class="form-group" style="width:60%">
                 <label>Name</label>
-                <input formControlName="Name" class="form-control" placeholder="Product Name" [(ngModel)]="product.name">
+                <input #inputName formControlName="Name" class="form-control" placeholder="Product Name" [(ngModel)]="product.name">
   
                 <div *ngIf="formGroup.controls['Name'].invalid && formGroup.controls['Name'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Name'].hasError('required')">Name is required!</small>
@@ -28,16 +28,16 @@
   
               <div class="form-group" style="width:60%">
                 <label>Descreption</label>
-                <textarea formControlName="Descreption" class="form-control" placeholder="Descreption" [(ngModel)]="product.description"></textarea>
+                <textarea #inputDescription class="form-control" placeholder="Descreption" [(ngModel)]="product.description"></textarea>
   
-                <div *ngIf="formGroup.controls['Descreption'].invalid && formGroup.controls['Descreption'].dirty">
+                <!-- <div *ngIf="formGroup.controls['Descreption'].invalid && formGroup.controls['Descreption'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Descreption'].hasError('required')">Descreption is required!</small>
-                </div>
+                </div> -->
               </div>
   
               <div class="form-group" style="width:60%">
                 <label>Title</label>
-                <input formControlName="Title" class="form-control" placeholder="Title" [(ngModel)]="product.title">
+                <input #inputTitle class="form-control" placeholder="Title" [(ngModel)]="product.title">
   
                 <!-- <div *ngIf="formGroup.controls['Title'].invalid && formGroup.controls['Title'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Title'].hasError('required')">Title is required!</small>
@@ -46,7 +46,7 @@
   
               <div class="form-group" style="width:60%">
                 <label>Indications</label>
-                <textarea formControlName="Indications" class="form-control" placeholder="Indications" [(ngModel)]="product.body"></textarea>
+                <textarea #inputIndications class="form-control" placeholder="Indications" [(ngModel)]="product.body"></textarea>
   
                 <!-- <div *ngIf="formGroup.controls['Indications'].invalid && formGroup.controls['Indications'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Indications'].hasError('required')">Indications are required!</small>
@@ -55,7 +55,7 @@
   
               <div class="form-group" style="width:60%">
                 <label>Side Effects</label>
-                <textarea formControlName="Effects" class="form-control" placeholder="Side Effects" [(ngModel)]="product.sideEffects"></textarea>
+                <textarea #inputSideEffects class="form-control" placeholder="Side Effects" [(ngModel)]="product.sideEffects"></textarea>
   
                 <!-- <div *ngIf="formGroup.controls['Effects'].invalid && formGroup.controls['Effects'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Effects'].hasError('required')">Side Effects are required!</small>
@@ -64,7 +64,7 @@
   
               <div class="form-group" style="width:60%">
                 <label>Price</label>
-                <input formControlName="Price" class="form-control" placeholder="Price" [(ngModel)]="product.price">
+                <input #inputPrice formControlName="Price" class="form-control" placeholder="Price" [(ngModel)]="product.price">
   
                 <div *ngIf="formGroup.controls['Price'].invalid && formGroup.controls['Price'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Price'].hasError('required')">Price is required!</small>
@@ -73,7 +73,7 @@
   
               <div class="form-group" style="width:60%">
                 <label>Quantity</label>
-                <input formControlName="Quantity" class="form-control" placeholder="Quantity" [(ngModel)]="product.quantity">
+                <input #inputQuantity formControlName="Quantity" class="form-control" placeholder="Quantity" [(ngModel)]="product.quantity">
   
                 <div *ngIf="formGroup.controls['Quantity'].invalid && formGroup.controls['Quantity'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Quantity'].hasError('required')">Quantity is required!</small>
@@ -82,14 +82,15 @@
   
               <div class="form-group" style="width:60%">
                 <label>Category</label>
-                <input formControlName="Category" class="form-control" placeholder="Category" [(ngModel)]="product.category">
+                <input #inputCategory formControlName="Category" class="form-control" placeholder="Category" [(ngModel)]="product.category">
   
                 <div *ngIf="formGroup.controls['Category'].invalid && formGroup.controls['Category'].dirty">
                   <small class="form-text text-danger" *ngIf="formGroup.controls['Category'].hasError('required')">Category is required!</small>
                 </div>
               </div>
   
-              <button [disabled]="formGroup.invalid" (click)="updateproduct()" class="btn add-btn">Update</button>
+              <button [disabled]="formGroup.invalid" (click)="updateproduct(product._id,inputPhotoURL.value,inputName.value,inputDescription.value,inputTitle.value,inputIndications.value,
+              inputSideEffects.value,inputPrice.value,inputQuantity.value,inputCategory.value)" class="btn add-btn">Update</button>
             </div>
           </form>
         </div>

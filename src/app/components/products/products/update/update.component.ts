@@ -69,8 +69,35 @@ export class UpdateComponent implements OnInit {
     })
   }
 
-  updateproduct() {
+  updateproduct(id:any,photoURL:string,Name:string,Description:string,Title:string,
+    Indications:string,SideEffects:string,Price:number,Quantity:number,Category:string) {
     console.log("updated")
+    let partner = this.partnerId
+    let product:Product = new Product;
+    // product = this.formGroup.value
+    product.pharmacyID=partner;
+    product.photoURL=photoURL;
+    product.name=Name;
+    product.description=Description;
+    product.title=Title;
+    product.body=Indications;
+    product.sideEffects=SideEffects;
+    product.price=Price;
+    product.quantity=Quantity;
+    product.category=Category;
+
+    console.log("partner", partner);
+    console.log("product", product);
+    
+    this._apiService.putedit(`product/update/` + id ,  product ).subscribe((response) => {
+      let obj = response as APIResponse
+      console.log("product details", obj)
+      if (obj.status) {
+        alert(obj.message)
+      } else {
+        alert(obj.message)
+      }
+    })
   }
 
 }
