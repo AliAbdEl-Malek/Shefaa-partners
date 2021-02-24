@@ -42,6 +42,9 @@
                 <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active">Products</a>
             </li>
             <li class="nav-item d-none d-md-block">
+                <a class="nav-link nav-hover" [routerLink]="['/orders/processing']" routerLinkActive="router-link-active">Processing orders</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
                 <a class="nav-link nav-hover" [routerLink]="['/Prescription']" routerLinkActive="router-link-active">Prescriptions</a>
             </li>
             <li class="nav-item d-block d-md-none">
@@ -52,6 +55,9 @@
             </li>
             <li class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Products</a>
+            </li>
+            <li class="nav-item d-block d-md-none">
+                <a class="nav-link nav-hover" [routerLink]="['/order/processing']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Processing orders</a>
             </li>
             <li class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/Prescription']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Prescriptions</a>
@@ -87,15 +93,15 @@
 
     <!-- User icon in md & lg screens -->
     <div *ngIf="isLogged" class="d-none d-md-flex">
-        <a class="nav-link  py-2 px-1" style="font-size: 30px; color: #f4f8fb;" role="button" data-toggle="dropdown">
+        <a *ngIf="partner" class="nav-link  py-2 px-1" style="font-size: 30px; color: #f4f8fb;" role="button" data-toggle="dropdown">
             <img *ngIf="partner.photoURL" src="http://localhost:3000/{{partner.photoURL}}" class="rounded-circle" alt="user Image" style="width: 35px; height: 35px;">
             <img *ngIf="!partner.photoURL" src="assets/images/pp-man.png" class="rounded-circle" alt="user Image" style="width: 35px;">
-            <span *ngIf="partner" style="font-size: 15px; position: relative; top: -5px;"> {{partner.name}}</span>
+            <span style="font-size: 15px; position: relative; top: -5px;"> {{partner.name}}</span>
         </a>
         <div class="dropdown-menu p-2 dropdown-menu-right">
             <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/profile/edit']" routerLinkActive="router-link-active"><i class="fa fa-user pr-2"></i>Profile</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/orders/previous']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2"></i>Previous Orders</a>
+            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/orders/delivered']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2"></i>Delivered Orders</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/registeration/logout']" routerLinkActive="router-link-active"><i class="fa fa-sign-out pr-2"></i>Log Out</a>
         </div>

@@ -48,6 +48,7 @@ export class SignupComponent implements OnInit {
         // this._router.navigateByUrl('')
         console.log("partner stored in array",this.newPartner)
         alert(obj.message)
+        this._router.navigateByUrl('')
       }
       else{
         alert(obj.message)

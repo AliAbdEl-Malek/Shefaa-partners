@@ -2,7 +2,7 @@
 
 <div style="background-color: #f4f8fb; padding-bottom: 190px;">
     <div class="container-fluid" style="padding-top: 80px;">
-        <h2 class="text-center" style="color: #404040;">Orders</h2>
+        <h2 class="text-center" style="color: #404040;"> Processing Orders</h2>
         <hr>
         <div class="card">
 
@@ -20,13 +20,10 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <div *ngIf="!users">
-                    Loading ..................
-                </div>
-                <tbody *ngIf="users">
+                <tbody>
                     <tr *ngFor="let order of orders;let currentIndex=index">
                         <td>{{currentIndex+1}}</td>
-                        <td>{{order._id }} </td>
+                        <td>{{order._id}} </td>
                         <td> {{order.createdAt | date:'short'}}</td>
                         <td><a [routerLink]="['/orders/items']" [queryParams]="{IDs: order.products}" routerLinkActive="router-link-active" type="button" class="btn" style="background-color: #32c69a; color: white;">Show </a></td>
                         <td>{{order.totalPrice}} </td>
@@ -35,7 +32,7 @@
                         <td>{{order.customer.phone}}</td>
 
                         <td>
-                            <button (click)="process(order)" type="button" class="btn" style="background-color: #838383; color: white;">Process </button>
+                            <button (click)="done(order)" type="button" class="btn btn-outline-info">Done </button>
 
                         </td>
                     </tr>
