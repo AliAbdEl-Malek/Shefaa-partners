@@ -1,5 +1,5 @@
 .hov {
-    background-color: #838383; 
+    background-color: #838383;
     color: white;
 }
 
@@ -7,4 +7,14 @@
     background-color: white;
     border-color: #838383;
     color: #838383;
+}
+
+#table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#table th {
+    text-align: center;
+    vertical-align: middle;
 }
