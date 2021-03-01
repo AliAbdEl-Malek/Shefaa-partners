@@ -1,6 +1,6 @@
 <nav class="d-flex flex-wrap align-items-center fixed-top navbar-expand-md navbar-dark" style="padding: .3rem 1rem; background-color: #838383;">
     <!-- <div class="container-fluid"> -->
-    <button class="btn navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <button *ngIf="partner" class="btn navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -11,55 +11,55 @@
     <!-- Logo -->
 
     <!-- Logo -->
-    <a class="navbar-brand py-0 d-none d-md-flex" [routerLink]="['']" routerLinkActive="router-link-active">
+    <a class="navbar-brand py-0 d-none d-md-flex ml-2 mr-auto" [routerLink]="['']" routerLinkActive="router-link-active">
         <img src="/assets/images/logo.jpeg" title="SHEFAA" width="40" class="rounded-circle">
     </a>
     <!-- Logo -->
 
     <!-- Links -->
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <div *ngIf="partner" class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
-            <li *ngIf="!partner" class="nav-item d-block d-md-none mt-2">
+            <!-- <li *ngIf="!partner" class="nav-item d-block d-md-none mt-2">
                 <a class="nav-link nav-hover" [routerLink]="['/registeration/signup']" routerLinkActive="router-link-active"><i class="fa fa-user-plus px-2"></i> Sign Up</a>
             </li>
+            <div *ngIf="!partner" class="dropdown-divider"></div>
             <li *ngIf="!partner" class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/registeration/login']" routerLinkActive="router-link-active"><i class="fa fa-sign-in px-2"></i> Login</a>
-            </li>
-            <div *ngIf="!partner" class="dropdown-divider"></div>
+            </li> -->
             <li *ngIf="partner" class="nav-item d-block d-md-none mt-2">
                 <a class="nav-link nav-hover" [routerLink]="['/profile/edit']" routerLinkActive="router-link-active"><i class="fa fa-user px-2"></i> {{partner.name}}</a>
             </li>
-            <li class="nav-item d-none d-md-block">
-                <a class="nav-link nav-hover" [routerLink]="['']" routerLinkActive="router-link-active">Home</a>
+            <li *ngIf="partner" class="nav-item d-none d-md-block">
+                <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active">Add Product</a>
+            </li>
+            <li *ngIf="partner" class="nav-item d-none d-md-block">
+                <a class="nav-link nav-hover" [routerLink]="['']" routerLinkActive="router-link-active">Orders</a>
             </li>
             <li *ngIf="partner" class="nav-item d-block d-md-none mt-2">
-                <a class="nav-link nav-hover" [routerLink]="['/profile/previous']" routerLinkActive="router-link-active"><i class="fa fa-user px-2"></i> Previous Orders</a>
+                <a class="nav-link nav-hover" [routerLink]="['/products/stock']" routerLinkActive="router-link-active"><i class="fa fa-star px-2"></i> Stock</a>
             </li>
-            <li class="nav-item d-none d-md-block">
-                <a class="nav-link nav-hover" [routerLink]="['/products/stock']" routerLinkActive="router-link-active">Stock</a>
+            <li *ngIf="partner" class="nav-item d-none d-md-block">
+                <a class="nav-link nav-hover" [routerLink]="['/orders/processing']" routerLinkActive="router-link-active">Processing</a>
             </li>
-            <li class="nav-item d-none d-md-block">
-                <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active">Products</a>
+            <li *ngIf="partner" class="nav-item d-none d-md-block">
+                <a class="nav-link nav-hover" [routerLink]="['/orders/delivered']" routerLinkActive="router-link-active">Delivered</a>
             </li>
-            <li class="nav-item d-none d-md-block">
-                <a class="nav-link nav-hover" [routerLink]="['/orders/processing']" routerLinkActive="router-link-active">Processing orders</a>
-            </li>
-            <li class="nav-item d-none d-md-block">
+            <li *ngIf="partner" class="nav-item d-none d-md-block">
                 <a class="nav-link nav-hover" [routerLink]="['/Prescription']" routerLinkActive="router-link-active">Prescriptions</a>
             </li>
-            <li class="nav-item d-block d-md-none">
-                <a class="nav-link nav-hover" [routerLink]="['']" routerLinkActive="router-link-active"><i class="fa fa-home px-2"></i> Home</a>
+            <li *ngIf="partner" class="nav-item d-block d-md-none ml-1">
+                <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Add Product</a>
             </li>
-            <li class="nav-item d-block d-md-none">
-                <a class="nav-link nav-hover" [routerLink]="['/products/stock']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Stock</a>
+            <li *ngIf="partner" class="nav-item d-block d-md-none">
+                <a class="nav-link nav-hover" [routerLink]="['']" routerLinkActive="router-link-active"><i class="fa fa-home px-2"></i> Orders</a>
             </li>
-            <li class="nav-item d-block d-md-none">
-                <a class="nav-link nav-hover" [routerLink]="['/products']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Products</a>
+            <li *ngIf="partner" class="nav-item d-block d-md-none">
+                <a class="nav-link nav-hover" [routerLink]="['/orders/processing']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Processing</a>
             </li>
-            <li class="nav-item d-block d-md-none">
-                <a class="nav-link nav-hover" [routerLink]="['/order/processing']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Processing orders</a>
+            <li *ngIf="partner" class="nav-item d-block d-md-none">
+                <a class="nav-link nav-hover" [routerLink]="['/orders/delivered']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Delivered</a>
             </li>
-            <li class="nav-item d-block d-md-none">
+            <li *ngIf="partner" class="nav-item d-block d-md-none">
                 <a class="nav-link nav-hover" [routerLink]="['/Prescription']" routerLinkActive="router-link-active"><i class="fa fa-tablets px-2"></i> Prescriptions</a>
             </li>
             <div *ngIf="partner" class="dropdown-divider"></div>
@@ -72,7 +72,7 @@
 
 
     <!-- Login -->
-    <div *ngIf="!isLogged" class="d-none d-md-flex mx-2">
+    <div *ngIf="!isLogged" class="d-flex mr-1">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link nav-hover" [routerLink]="['/registeration/login']" routerLinkActive="router-link-active"><i class="fa fa-sign-in"></i> Login</a>
@@ -82,7 +82,7 @@
     <!-- Login -->
 
     <!-- Sign Up -->
-    <div *ngIf="!isLogged" class="d-none d-md-flex mr-2">
+    <div *ngIf="!isLogged" class="d-flex mr-1">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link nav-hover" [routerLink]="['/registeration/signup']" routerLinkActive="router-link-active"><i class="fa fa-user-plus"></i> Sign Up</a>
@@ -101,7 +101,7 @@
         <div class="dropdown-menu p-2 dropdown-menu-right">
             <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/profile/edit']" routerLinkActive="router-link-active"><i class="fa fa-user pr-2"></i>Profile</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/orders/delivered']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2"></i>Delivered Orders</a>
+            <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/products/stock']" routerLinkActive="router-link-active"><i class="fa fa-star pr-2"></i>Stock</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item px-2 toggle-hover" [routerLink]="['/registeration/logout']" routerLinkActive="router-link-active"><i class="fa fa-sign-out pr-2"></i>Log Out</a>
         </div>
