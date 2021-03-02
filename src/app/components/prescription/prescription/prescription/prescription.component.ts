@@ -13,7 +13,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class PrescriptionComponent implements OnInit {
 
-  prescriptions: Prescription[] = []
+  prescriptions: any
   users:any[] = []
   ids: Prescription[] = []
   // user:any
@@ -28,7 +28,7 @@ export class PrescriptionComponent implements OnInit {
       // console.log("Data from server in prescription:", obj)
       if (obj.status) {
         this.prescriptions = obj.Data
-        // console.log("prescription:", this.prescriptions)
+        console.log("prescription:", this.prescriptions)
         // this.users = obj.Data.userData
         // console.log("user data:", this.users)
       }
